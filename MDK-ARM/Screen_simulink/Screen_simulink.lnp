@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"screen_simulink\startup_stm32f103xe.o"
+"screen_simulink\main.o"
+"screen_simulink\gpio.o"
+"screen_simulink\dma.o"
+"screen_simulink\usart.o"
+"screen_simulink\stm32f1xx_it.o"
+"screen_simulink\stm32f1xx_hal_msp.o"
+"screen_simulink\stm32f1xx_hal_gpio_ex.o"
+"screen_simulink\stm32f1xx_hal_tim.o"
+"screen_simulink\stm32f1xx_hal_tim_ex.o"
+"screen_simulink\stm32f1xx_hal_uart.o"
+"screen_simulink\stm32f1xx_hal.o"
+"screen_simulink\stm32f1xx_hal_rcc.o"
+"screen_simulink\stm32f1xx_hal_rcc_ex.o"
+"screen_simulink\stm32f1xx_hal_gpio.o"
+"screen_simulink\stm32f1xx_hal_dma.o"
+"screen_simulink\stm32f1xx_hal_cortex.o"
+"screen_simulink\stm32f1xx_hal_pwr.o"
+"screen_simulink\stm32f1xx_hal_flash.o"
+"screen_simulink\stm32f1xx_hal_flash_ex.o"
+"screen_simulink\stm32f1xx_hal_exti.o"
+"screen_simulink\system_stm32f1xx.o"
+--strict --scatter "Screen_simulink\Screen_simulink.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Screen_simulink.map" -o Screen_simulink\Screen_simulink.axf
