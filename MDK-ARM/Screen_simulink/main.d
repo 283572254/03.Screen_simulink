@@ -29,3 +29,4 @@ screen_simulink\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 screen_simulink\main.o: ../Core/Inc/dma.h
 screen_simulink\main.o: ../Core/Inc/usart.h
 screen_simulink\main.o: ../Core/Inc/gpio.h
+screen_simulink\main.o: ..\BSP\../USER/user.h

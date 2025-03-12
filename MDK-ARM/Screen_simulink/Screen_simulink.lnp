@@ -21,7 +21,14 @@
 "screen_simulink\stm32f1xx_hal_flash_ex.o"
 "screen_simulink\stm32f1xx_hal_exti.o"
 "screen_simulink\system_stm32f1xx.o"
---strict --scatter "Screen_simulink\Screen_simulink.sct"
+"screen_simulink\serial.o"
+"screen_simulink\driver.o"
+"screen_simulink\ringqueue.o"
+"screen_simulink\user.o"
+"screen_simulink\protocol.o"
+"screen_simulink\notify.o"
+"screen_simulink\sendmessage.o"
+--library_type=microlib --strict --scatter "Screen_simulink\Screen_simulink.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "Screen_simulink.map" -o Screen_simulink\Screen_simulink.axf
