@@ -1,0 +1,19 @@
+<Resource>
+    <pages>
+        <page name="主页面" id="0" />
+        <page name="状态栏" id="1" />
+        <page name="阈值页面" id="2" />
+        <page name="波形页面" id="3" />
+        <page name="电压波形" id="4" />
+        <page name="电流波形" id="5" />
+    </pages>
+    <images>
+        <image id="0" url="e:\08.project\03.screen_simulink\01.ui\Images\主页面.png" effect_width="480" effect_height="272" />
+        <image id="1" url="e:\08.project\03.screen_simulink\01.ui\Images\状态栏.png" effect_width="480" effect_height="272" />
+        <image id="2" url="e:\08.project\03.screen_simulink\01.ui\Images\阈值页面.png" effect_width="480" effect_height="272" />
+        <image id="3" url="e:\08.project\03.screen_simulink\01.ui\Images\波形页面.png" effect_width="480" effect_height="272" />
+        <image id="4" url="e:\08.project\03.screen_simulink\01.ui\Images\电压波形.png" effect_width="480" effect_height="272" />
+        <image id="5" url="e:\08.project\03.screen_simulink\01.ui\Images\电流波形.png" effect_width="480" effect_height="272" />
+    </images>
+    <waves />
+</Resource>
