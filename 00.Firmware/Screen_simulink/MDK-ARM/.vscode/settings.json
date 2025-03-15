@@ -36,6 +36,10 @@
         "cstddef": "c",
         "cmath": "c",
         "ios": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "queue": "c",
+        "sys_task.h": "c",
+        "sys_time.h": "c",
+        "tim.h": "c"
     }
 }

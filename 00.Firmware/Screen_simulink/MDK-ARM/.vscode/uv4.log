@@ -1,8 +1,16 @@
-*** Using Compiler 'V5.05 update 1 (build 106)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Screen_simulink'
 compiling user.c...
+../Communication/SendMessage.c(99): warning: passing 'char *' to parameter of type 'uint8_t *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+        Dacai_Send(str++,1);
+                   ^~~~~
+../Communication/SendMessage.c(6): note: passing argument to parameter 'pData' here
+void Dacai_Send(uint8_t *pData,uint16_t nDataLen)
+                         ^
+1 warning generated.
+compiling SendMessage.c...
 linking...
-Program Size: Code=7680 RO-data=380 RW-data=288 ZI-data=2448  
+Program Size: Code=20280 RO-data=428 RW-data=1040 ZI-data=2584  
 FromELF: creating hex file...
-"Screen_simulink\Screen_simulink.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:01
+"Screen_simulink\Screen_simulink.axf" - 0 Error(s), 1 Warning(s).
+Build Time Elapsed:  00:00:00

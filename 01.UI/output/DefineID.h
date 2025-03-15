@@ -54,9 +54,9 @@
 
 #define  _BTN_电压波形_BUTTON1                                                     1
 
-#define  _GRAPH_电压波形_GRAPH1                                                    2
-
 #define  _BTN_电压波形_BUTTON2                                                     3
+
+#define  _HIS_GRA_电压波形_HISTORYGRAPH1                                           2
 
 #define  _BTN_电流波形_BUTTON1                                                     1
 

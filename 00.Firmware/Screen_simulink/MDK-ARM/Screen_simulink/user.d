@@ -1,38 +1,39 @@
-screen_simulink\user.o: ..\USER\user.c
-screen_simulink\user.o: ..\USER\../USER/user.h
-screen_simulink\user.o: ../Core/Inc/main.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
-screen_simulink\user.o: ../Core/Inc/stm32f1xx_hal_conf.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
-screen_simulink\user.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
-screen_simulink\user.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
-screen_simulink\user.o: ../Drivers/CMSIS/Include/core_cm3.h
-screen_simulink\user.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-screen_simulink\user.o: ../Drivers/CMSIS/Include/cmsis_version.h
-screen_simulink\user.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-screen_simulink\user.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-screen_simulink\user.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-screen_simulink\user.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
-screen_simulink\user.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
-screen_simulink\user.o: ..\USER\../BSP/driver.h
-screen_simulink\user.o: ../Core/Inc/usart.h
-screen_simulink\user.o: ..\USER\../BSP/../BSP/SERIAL/serial.h
-screen_simulink\user.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-screen_simulink\user.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-screen_simulink\user.o: ..\USER\../BSP/../BSP/RINGQUEUE/ringqueue.h
-screen_simulink\user.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-screen_simulink\user.o: ..\USER\../Communication/protocol.h
-screen_simulink\user.o: ..\USER\../Communication/SendMessage.h
+screen_simulink/user.o: ..\USER\user.c ..\USER\..\USER\user.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
+  ..\Core\Inc\stm32f1xx_hal_conf.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h \
+  ..\Drivers\CMSIS\Include\core_cm3.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  ..\Drivers\CMSIS\Include\cmsis_version.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  ..\Drivers\CMSIS\Include\cmsis_armclang.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
+  ..\USER\..\BSP\driver.h ..\Core\Inc\usart.h \
+  ..\BSP\..\BSP\SERIAL\serial.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\BSP\..\BSP\RINGQUEUE\ringqueue.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  ..\USER\..\Communication\protocol.h \
+  ..\USER\..\Communication\SendMessage.h ..\USER\..\Task\sys_task.h \
+  ..\USER\..\Task\sys_time.h

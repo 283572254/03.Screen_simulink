@@ -1,6 +1,14 @@
 #include "../Communication/SendMessage.h"
 #include "../BSP/SERIAL/serial.h"
 
+
+
+void Dacai_Send(uint8_t *pData,uint16_t nDataLen)
+{
+    UART_SendData(pData,nDataLen,&huart1);
+}
+
+
 /**
  * @brief Sends a command to a specified screen and control.
  * 
@@ -21,7 +29,7 @@ void Send_Command(uint16_t command,uint16_t screen_id,uint16_t control_id)
     data[4] = screen_id&0xff;
     data[5] = (control_id>>8)&0xff;
     data[6] = control_id&0xff;
-    UART_SendData(data,7,&huart1);
+    Dacai_Send(data,7);
 }
 /**
  * @brief Sends an end command to terminate a communication sequence.
@@ -36,14 +44,14 @@ void Send_EndCommand(void)
     data[1] = (END_COMD>>16)&0xff;
     data[2] = (END_COMD>>8)&0xff;
     data[3] = END_COMD&0xff;
-    UART_SendData(data,4,&huart1);
+    Dacai_Send(data,4);
 }
 /**
  * @brief Sends an integer value to a specified screen and control ID over UART.
  *
  * This function constructs a message containing an integer value, along with additional
  * parameters such as screen ID, control ID, sign, and zero fill flag, and sends it
- * over UART using the UART_SendData function.
+ * over UART using the Dacai_Send function.
  *
  * @param screen_id   The ID of the target screen where the message will be sent.
  * @param control_id  The ID of the control on the target screen that will receive the message.
@@ -61,20 +69,34 @@ void SendTextInt32(uint16_t screen_id,uint16_t control_id,uint32_t value,uint8_t
     data[3] = (value>>16)&0xff;
     data[4] = (value>>8)&0xff;
     data[5] = value&0xff;
-    UART_SendData(data,10,&huart1);
+    Dacai_Send(data,10);
     Send_EndCommand();
 }   
 
-void SendTextFloat(uint16_t screen_id,uint16_t control_id,float value,uint8_t sign,uint8_t fill_zero)
+void SendTextFloat(uint16_t screen_id,uint16_t control_id,float value,uint8_t precision,uint8_t show_zero)
 {
-
+    uint8_t data[6];
+    Send_Command(SEND_FLOATCOMD,screen_id,control_id);
+    data[0] = 0x02;
+    data[1] = (precision&0x0f)|(show_zero?0x80:0x00);
+    for(int i=0;i<4;i++)
+    {
+            //需要区分大小端
+        #if(0)
+            TX_8(((uint8 *)&value)[i]);
+        #else
+            data[2+i] = ((uint8_t *)&value)[3-i];
+        #endif
+    }
+    Dacai_Send(data,6);
+    Send_EndCommand();
 }
 
 static void String(char *str)
 {
     while(*str)
     {
-        UART_SendData(str++,1,&huart1);
+        Dacai_Send(str++,1);
     }
 }
 /**
@@ -99,10 +121,10 @@ void SendTextString(uint16_t screen_id,uint16_t control_id,char* str)
 
 void SendNdata(uint8_t *pData,uint16_t nDataLen)
 {
-    uint16_t i;
-    for(;i<nDataLen;i++)
+    uint16_t i ;
+    for(i = 0;i<nDataLen;i++)
     {
-        UART_SendData(pData++,1,&huart1);
+        Dacai_Send(pData++,1);
     }
 }
 
@@ -120,14 +142,34 @@ void SendNdata(uint8_t *pData,uint16_t nDataLen)
  */
 void SendGrapDate(uint16_t screen_id,uint16_t control_id,uint8_t channel,uint8_t *pData,uint16_t nDataLen)
 {
-    uint8_t data[4];
+    uint8_t data[3];
     Send_Command(SEND_GRAPCOMD,screen_id,control_id);
     data[0] = channel;
     data[1] = (nDataLen>>8)&0xff;
     data[2] = nDataLen&0xff;
-    UART_SendData(data,3,&huart1);
+    Dacai_Send(data,3);
     SendNdata(pData,nDataLen);
     Send_EndCommand();
 }
 
+void SendHistoryData(uint16_t screen_id,uint16_t control_id, float value,uint8_t channel)
+{   
+    uint8_t data[4];
+    Send_Command(SEND_HISCOMD,screen_id,control_id);
+    for(int j=0;j<channel;j++)
+    {
+        for(int i=0;i<4;i++)
+        {
+                //需要区分大小端
+            #if(0)
+                TX_8(((uint8 *)&value)[i]);
+            #else
+                data[i] = ((uint8_t *)&value)[3-i];
+            #endif
+        }
+    }
+    Dacai_Send(data,4);
+    Send_EndCommand();   
+    
+}
 
