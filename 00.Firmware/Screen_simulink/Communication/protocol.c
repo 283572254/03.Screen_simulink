@@ -76,9 +76,15 @@ void DaCai_protocol_analysis(void)
                 //"It handles the control button data."
                 NotifyButton(DaCai_Save_Data.screenID, DaCai_Save_Data.widgetID, DaCai_Save_Data.DACAI_Buffer[0]);
             break;
+            case  kCtrlText:
+                //"It handles the control text data."
+                NotifyText(DaCai_Save_Data.screenID, DaCai_Save_Data.widgetID, DaCai_Save_Data.DACAI_Buffer);
+            break;
+            default:
+            break;
         }
-
     }
+
 }
 
 

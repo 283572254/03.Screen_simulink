@@ -1,5 +1,5 @@
 #include "../Communication/Notify.h"
-
+#include <string.h>  
 
 
 
@@ -24,4 +24,12 @@ void NotifyButton(uint16_t screen_id, uint16_t control_id, uint8_t state)
 
 }
 
-
+char Threshold_test[10];
+void NotifyText(uint16_t screen_id, uint16_t control_id, const char text[])
+{
+    if(screen_id==0x02 && control_id==0x02)//user setting
+    {
+        // TODO: 处理文本控件通知
+       memcpy(Threshold_test,text,10);
+    }
+}
